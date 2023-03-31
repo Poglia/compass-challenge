@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SBody = styled.body`
     background: linear-gradient(180deg, #2E2F36 0%, #17181C 100%);
     display: flex;
-  
+    font-family: "Poppins", sans-serif;
     
     `
 export const SSection = styled.section`
