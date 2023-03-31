@@ -19,14 +19,11 @@ export const SInput = styled.input`
 
   width: 406px;
   height: 62px;
-
-  /* white */
-
+  
   border: 1px solid #f5f5f5;
   border-radius: 46px;
-margin-top: 24px;
-/* margin-: 12px; */
-  /* margin: 32px 12px 12px 0px */
+  margin-top: 24px;
+  color: white;
 `;
 
 export const SButton = styled.button`

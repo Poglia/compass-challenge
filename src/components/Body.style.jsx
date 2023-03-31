@@ -3,11 +3,15 @@ import styled from 'styled-components';
 export const SBody = styled.body`
     background: linear-gradient(180deg, #2E2F36 0%, #17181C 100%);
     display: flex;
-    justify-content: center
-
-`
+  
+    
+    `
 export const SSection = styled.section`
    width: 50%;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+
 `;
 
 
