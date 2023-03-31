@@ -2,13 +2,14 @@ import { NavLink } from "react-router-dom";
 import backGroundImage from "../assets/icons/background.svg";
 import { SButton, SForm, SInput } from "../components/Form.style";
 import { SBody, SSection, SImg } from "../components/Body.style";
-import { SH1, SP } from "../components/Text.style";
+import { SH1, SH3, SP} from "../components/Text.style";
 
 const Register  = () => (
   <SBody>
     <SSection>
       <SH1>Olá</SH1>
       <SP>Por favor, registre-se para continuar</SP>
+      <SH3>Registro</SH3>
       <SForm action="" method="post">
         <SInput placeholder="Nome" type="text" name="name" />
         <SInput placeholder="Usuário" type="text" name="name" />
