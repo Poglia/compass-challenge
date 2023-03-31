@@ -4,7 +4,7 @@ import { SButton, SForm, SInput } from "../components/Form.style";
 import { SBody, SSection, SImg } from "../components/Body.style";
 import { SH1, SP } from "../components/Text.style";
 
-const Register = () => (
+const Register  = () => (
   <SBody>
     <SSection>
       <SH1>Olá</SH1>
@@ -21,7 +21,7 @@ const Register = () => (
         </SButton>
       </SForm>
       <SP>
-        Já possui uma conta?{" "}
+        Já possui uma conta?
         <NavLink className="navbar-brand" to="/login">
           <b>Faça Login</b>
         </NavLink>

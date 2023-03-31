@@ -15,7 +15,7 @@ const Login = () => (
         <SButton type="submit">Logar-se</SButton>
       </SForm>
       <SP>
-        Novo por aqui?{" "}
+        Novo por aqui?
         <NavLink className="navbar-brand" to="/">
           <b>Registre-se</b>
         </NavLink>
