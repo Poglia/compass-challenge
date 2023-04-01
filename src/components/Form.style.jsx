@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { theme } from "../styles/defaultVariables";
 
 export const SForm = styled.form`
   display: flex;
@@ -7,10 +8,24 @@ export const SForm = styled.form`
 `;
 
 export const SInput = styled.input`
+  ${({ backGroundImage }) => css`
+    background-image: url(${backGroundImage});
+    background-repeat: no-repeat;
+    background-position: right, center, center;
+    background-position-x: 22.5rem;
+    background-position-y: 0.75rem;
+    /* webkit-calendar-picker-indicator: opacity: 0;         */
+  `}
+
+  ::placeholder {
+    color: ${theme.colors.text};
+  }
+
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  /* -webkit-text-fill-color: #000000 !important;  */
+
   background-color: transparent;
   box-sizing: border-box;
-
-  /* Auto layout */
 
   display: flex;
   flex-direction: row;
@@ -22,7 +37,7 @@ export const SInput = styled.input`
   height: 3rem;
 
   font-size: 1rem;
-  
+
   border: 1px solid #f5f5f5;
   border-radius: 3rem;
   margin-top: 1.5rem;
@@ -30,7 +45,7 @@ export const SInput = styled.input`
 `;
 
 export const SButton = styled.button`
-margin: 1rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
 
   width: 25rem;
   height: 3rem;

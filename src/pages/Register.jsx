@@ -4,6 +4,13 @@ import { SButton, SForm, SInput } from "../components/Form.style";
 import { SBody, SSection, SImg, SDivTexts } from "../components/Body.style";
 import { SH1, SH3, SP1, SP2, SPLink } from "../components/Text.style";
 
+import SvgName from "../assets/icons/name.svg";
+import SvgUser from "../assets/icons/user.svg";
+import SvgDate from "../assets/icons/date.svg";
+import SvgEmail from "../assets/icons/email.svg";
+import SvgPassword from "../assets/icons/password.svg";
+import SvgConfirmPassword from "../assets/icons/passConfirm.svg";
+
 const Register = () => (
   <SBody>
     <SSection>
@@ -13,15 +20,16 @@ const Register = () => (
         <SH3>Registro</SH3>
       </SDivTexts>
       <SForm action="" method="post">
-        <SInput placeholder="Nome" type="text" name="name" />
-        <SInput placeholder="Usuário" type="text" name="user" />
-        <SInput placeholder="Nascimento" type="date" name="date" />
-        <SInput placeholder="Email" type="e-mail" name="email" />
-        <SInput placeholder="Senha" type="password" name="password" />
+        <SInput placeholder="Nome" type="text" name="name" backGroundImage={SvgName}  />
+        <SInput placeholder="Usuário" type="text" name="user" backGroundImage={SvgUser}/>
+        <SInput placeholder="Nascimento" type="text" name="date" backGroundImage={SvgDate}/>
+        <SInput placeholder="Email" type="e-mail" name="email" backGroundImage={SvgEmail}/>
+        <SInput placeholder="Senha" type="password" name="password" backGroundImage={SvgPassword}/>
         <SInput
           placeholder="Confirmar Senha"
           type="password"
           name="password-c"
+          backGroundImage={SvgConfirmPassword}
         />
         <SButton type="submit" value="Logar-se">
           Registrar-se

@@ -19,4 +19,7 @@ export const theme = {
     xlarge: '5rem',
     hude: '6rem'
   },
+  images: {
+    // name: "../assets/icons/nome.svg",
+  }
 };
