@@ -20,16 +20,16 @@ const Register = () => (
         <SH3>Registro</SH3>
       </SDivTexts>
       <SForm action="" method="post">
-        <SInput placeholder="Nome" type="text" name="name" backGroundImage={SvgName}  />
-        <SInput placeholder="Usuário" type="text" name="user" backGroundImage={SvgUser}/>
-        <SInput placeholder="Nascimento" type="text" name="date" backGroundImage={SvgDate}/>
-        <SInput placeholder="Email" type="e-mail" name="email" backGroundImage={SvgEmail}/>
-        <SInput placeholder="Senha" type="password" name="password" backGroundImage={SvgPassword}/>
+        <SInput placeholder="Nome" type="text" name="name" backGroundIcon={SvgName}  />
+        <SInput placeholder="Usuário" type="text" name="user" backGroundIcon={SvgUser}/>
+        <SInput placeholder="Nascimento" type="text" name="date" backGroundIcon={SvgDate}/>
+        <SInput placeholder="Email" type="e-mail" name="email" backGroundIcon={SvgEmail}/>
+        <SInput placeholder="Senha" type="password" name="password" backGroundIcon={SvgPassword}/>
         <SInput
           placeholder="Confirmar Senha"
           type="password"
           name="password-c"
-          backGroundImage={SvgConfirmPassword}
+          backGroundIcon={SvgConfirmPassword}
         />
         <SButton type="submit" value="Logar-se">
           Registrar-se
@@ -43,6 +43,7 @@ const Register = () => (
       </SP2>
     </SSection>
     <SSection>
+      
       <SImg src={backGroundImage} alt="Imagem de fundo" />
     </SSection>
   </SBody>

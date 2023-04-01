@@ -8,8 +8,8 @@ export const SForm = styled.form`
 `;
 
 export const SInput = styled.input`
-  ${({ backGroundImage }) => css`
-    background-image: url(${backGroundImage});
+  ${({ backGroundIcon }) => css`
+    background-image: url(${backGroundIcon});
     background-repeat: no-repeat;
     background-position: right, center, center;
     background-position-x: 22.5rem;
