@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
 import backGroundImage from "../assets/icons/background.svg";
 import { SButton, SForm, SInput } from "../components/Form.style";
-import { SBody, SSection, SImg, SDivTexts } from "../components/Body.style";
+import {
+  SBody,
+  SSection,
+  SImgBG,
+  SImgLogo,
+  SDivTexts,
+} from "../components/Body.style";
 import { SH1, SH3, SP1, SP2, SPLink } from "../components/Text.style";
 
 import SvgName from "../assets/icons/name.svg";
@@ -10,6 +16,7 @@ import SvgDate from "../assets/icons/date.svg";
 import SvgEmail from "../assets/icons/email.svg";
 import SvgPassword from "../assets/icons/password.svg";
 import SvgConfirmPassword from "../assets/icons/passConfirm.svg";
+import SvgLogo from "../assets/icons/logo.svg";
 
 const Register = () => (
   <SBody>
@@ -20,11 +27,36 @@ const Register = () => (
         <SH3>Registro</SH3>
       </SDivTexts>
       <SForm action="" method="post">
-        <SInput placeholder="Nome" type="text" name="name" backGroundIcon={SvgName}  />
-        <SInput placeholder="Usuário" type="text" name="user" backGroundIcon={SvgUser}/>
-        <SInput placeholder="Nascimento" type="text" name="date" backGroundIcon={SvgDate}/>
-        <SInput placeholder="Email" type="e-mail" name="email" backGroundIcon={SvgEmail}/>
-        <SInput placeholder="Senha" type="password" name="password" backGroundIcon={SvgPassword}/>
+        <SInput
+          placeholder="Nome"
+          type="text"
+          name="name"
+          backGroundIcon={SvgName}
+        />
+        <SInput
+          placeholder="Usuário"
+          type="text"
+          name="user"
+          backGroundIcon={SvgUser}
+        />
+        <SInput
+          placeholder="Nascimento"
+          type="text"
+          name="date"
+          backGroundIcon={SvgDate}
+        />
+        <SInput
+          placeholder="Email"
+          type="e-mail"
+          name="email"
+          backGroundIcon={SvgEmail}
+        />
+        <SInput
+          placeholder="Senha"
+          type="password"
+          name="password"
+          backGroundIcon={SvgPassword}
+        />
         <SInput
           placeholder="Confirmar Senha"
           type="password"
@@ -43,8 +75,8 @@ const Register = () => (
       </SP2>
     </SSection>
     <SSection>
-      
-      <SImg src={backGroundImage} alt="Imagem de fundo" />
+      <SImgLogo src={SvgLogo} />
+      <SImgBG src={backGroundImage} alt="Imagem de fundo" />
     </SSection>
   </SBody>
 );

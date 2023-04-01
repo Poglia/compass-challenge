@@ -16,7 +16,12 @@ export const SDivTexts = styled.div`
   text-align: left;
 `;
 
-export const SImg = styled.img`
+export const SImgLogo = styled.img`
+ position: absolute;
+ max-width: 500px;
+`
+
+export const SImgBG = styled.img`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
