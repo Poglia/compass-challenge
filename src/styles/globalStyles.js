@@ -29,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   h1{
-    background-color:blue;
+    /* background-color:blue; */
     width: 25rem;
     margin: 1rem 0 2rem 0
   }

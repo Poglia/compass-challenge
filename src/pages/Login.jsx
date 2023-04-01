@@ -1,26 +1,28 @@
 import { NavLink } from "react-router-dom";
 import backGroundImage from "../assets/icons/background.svg";
 import { SButton, SForm, SInput } from "../components/Form.style";
-import { SBody, SSection, SImg } from "../components/Body.style";
-import { SH1, SP, SH3 } from "../components/Text.style";
+import { SBody, SSection, SImg, SDivTexts } from "../components/Body.style";
+import { SH1, SP1, SP2, SH3, SPLink } from "../components/Text.style";
 
 const Login = () => (
   <SBody>
     <SSection>
-      <SH1>Olá</SH1>
-      <SP>Para continuar navegando de forma segura, efetue o login</SP>
-      <SH3>Registro</SH3>
+      <SDivTexts>
+        <SH1>Olá</SH1>
+        <SP1>Para continuar navegando de forma segura, efetue o login</SP1>
+        <SH3>Login</SH3>
+      </SDivTexts>
       <SForm action="" method="post">
         <SInput placeholder="Usuário" type="text" name="name" />
         <SInput placeholder="Senha" type="password" name="name" />
         <SButton type="submit">Logar-se</SButton>
       </SForm>
-      <SP>
-        Novo por aqui?
+      <SP2>
+        Novo por aqui ?
         <NavLink className="navbar-brand" to="/">
-          <b>Registre-se</b>
+          <SPLink>Registre-se</SPLink>
         </NavLink>
-      </SP>
+      </SP2>
     </SSection>
     <SSection>
       <SImg src={backGroundImage} alt="Imagem de fundo" />
