@@ -18,7 +18,7 @@ const Login = () => (
   <SBody>
     <SSection>
       <SDivTexts>
-        <SH1>Olá</SH1>
+        <SH1>Olá,</SH1>
         <SP1>Para continuar navegando de forma segura, efetue o login</SP1>
         <SH3>Login</SH3>
       </SDivTexts>

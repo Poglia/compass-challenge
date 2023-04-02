@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+   
   }
 
   body {
@@ -31,16 +32,17 @@ export const GlobalStyles = createGlobalStyle`
   h1{
     /* background-color:blue; */
     width: 22vw;
-    margin: 1vw 0 3vw 2vw
+    margin: 1vw 0 2vw 1vw;
+    transform: scale(calc(1vw / 100));
   }
   
   h3{
-    margin: 2vw 0 0 2vw
+    margin: 2vw 0 0 1vw
   }
   
   p {
     /* background-color:green; */
-    margin: 0 0 0 2vw
+    margin: 0 0 0 1vw
     
   }
   

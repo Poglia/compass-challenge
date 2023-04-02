@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import backGroundImage from "../assets/icons/background.svg";
-import { SButton, SForm, SInput } from "../components/Form.style";
+import { SButton, SForm, SInput, SDivError } from "../components/Form.style";
 import {
   SBody,
   SSection,
@@ -22,7 +22,7 @@ const Register = () => (
   <SBody>
     <SSection>
       <SDivTexts>
-        <SH1>Olá</SH1>
+        <SH1>Olá,</SH1>
         <SP1>Por favor, registre-se para continuar</SP1>
         <SH3>Registro</SH3>
       </SDivTexts>
@@ -69,6 +69,10 @@ const Register = () => (
           backGroundIcon={SvgConfirmPassword}
           disabled="disabled"
         />
+        <SDivError>
+
+          
+        </SDivError>
         <SButton type="submit" value="Logar-se">
           Registrar-se
         </SButton>

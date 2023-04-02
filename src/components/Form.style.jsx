@@ -39,15 +39,15 @@ export const SInput = styled.input`
 
   width: 22vw;
   height: 2.5vw;
-  min-width: 100px;
+  min-width: 50px;
   max-width: 500px;
-  min-height: 25px;
+  min-height: 15px;
 
   /* font-size: 0.8pw; */
 
-  border: 1px solid #f5f5f5;
+  border: 0.1vw solid #f5f5f5;
   border-radius: 100px;
-  margin-top: 1.5vw;
+  margin-top: 1.2vw;
   color: white;
 `;
 
@@ -57,16 +57,26 @@ export const SButton = styled.button`
   height: 2.5vw;
   /* min-width: 150px; */
   max-width: 500px;
+  padding: 1.5vw 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: linear-gradient(180deg, #ad2d14 0%, #f42e07 100%);
 
   border: 1px solid #fe2e05;
-  border-radius: 3rem;
+  border-radius: 100px;
 
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 1vw;
+  font-size: 0.8vw;
 
   color: #f5f5f5;
 `;
+
+export const SDivError = styled.div`
+  height: 3vw;
+  color: ${theme.colors.textError}
+  display: ;
+`
