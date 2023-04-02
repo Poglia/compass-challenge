@@ -76,7 +76,7 @@ export const SButton = styled.button`
 `;
 
 export const SDivError = styled.div`
-  height: 3vw;
+  margin-top: 10px;
   color: ${theme.colors.textError}
-  display: ;
+  display: flex;
 `

@@ -14,6 +14,8 @@ import SvgUser from "../assets/icons/user.svg";
 import SvgPassword from "../assets/icons/password.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
+import Warning from "../components/react/DivError"
+
 const Login = () => (
   <SBody>
     <SSection>
@@ -37,6 +39,7 @@ const Login = () => (
           backGroundImage={SvgPassword}
           disabled="disabled"
         />
+        <Warning/>
         <SButton type="submit">Logar-se</SButton>
       </SForm>
       <SP2>
