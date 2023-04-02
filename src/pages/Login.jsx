@@ -26,14 +26,14 @@ const Login = () => (
         <SInput
           placeholder="Usuário"
           type="text"
-          name="name"
+          name="name-login"
           backGroundImage={SvgUser}
           disabled="disabled"
         />
         <SInput
           placeholder="Senha"
           type="password"
-          name="name"
+          name="password-login"
           backGroundImage={SvgPassword}
           disabled="disabled"
         />

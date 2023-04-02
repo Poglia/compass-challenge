@@ -58,7 +58,7 @@ const Register = () => (
         <SInput
           placeholder="Senha"
           type="password"
-          name="password"
+          name="password" 
           backGroundIcon={SvgPassword}
           disabled="disabled"
         />
