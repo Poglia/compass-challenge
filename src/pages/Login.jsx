@@ -28,12 +28,14 @@ const Login = () => (
           type="text"
           name="name"
           backGroundImage={SvgUser}
+          disabled="disabled"
         />
         <SInput
           placeholder="Senha"
           type="password"
           name="name"
           backGroundImage={SvgPassword}
+          disabled="disabled"
         />
         <SButton type="submit">Logar-se</SButton>
       </SForm>

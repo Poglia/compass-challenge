@@ -38,6 +38,7 @@ const Register = () => (
           type="text"
           name="user"
           backGroundIcon={SvgUser}
+          disabled="disabled"
         />
         <SInput
           placeholder="Nascimento"
@@ -58,6 +59,7 @@ const Register = () => (
           type="password"
           name="password"
           backGroundIcon={SvgPassword}
+          disabled="disabled"
         />
         <SInput
           placeholder="Confirmar Senha"
