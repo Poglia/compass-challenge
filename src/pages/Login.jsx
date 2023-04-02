@@ -14,48 +14,50 @@ import SvgUser from "../assets/icons/user.svg";
 import SvgPassword from "../assets/icons/password.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
-import Warning from "../components/react/DivError"
+import Warning from "../components/react/DivError";
 
-const Login = () => (
-  <SBody>
-    <SSection>
-      <SDivTexts>
-        <SH1>Olá,</SH1>
-        <SP1>Para continuar navegando de forma segura, efetue o login</SP1>
-        <SH3>Login</SH3>
-      </SDivTexts>
-      <SForm action="" method="post">
-        <SInput
-          placeholder="Usuário"
-          type="text"
-          name="name-login"
-          backGroundImage={SvgUser}
-          disabled="disabled"
-          required
-        />
-        <SInput
-          placeholder="Senha"
-          type="password"
-          name="password-login"
-          backGroundImage={SvgPassword}
-          disabled="disabled"
-          required
-        />
-        <Warning/>
-        <SButton type="submit">Logar-se</SButton>
-      </SForm>
-      <SP2>
-        Novo por aqui ?
-        <NavLink className="navbar-brand" to="/">
-          <SPLink>Registre-se</SPLink>
-        </NavLink>
-      </SP2>
-    </SSection>
-    <SSection>
-      <SImgLogo src={SvgLogo} />
-      <SImgBG src={backGroundImage} alt="Imagem de fundo"></SImgBG>
-    </SSection>
-  </SBody>
-);
+function Login() {
+  return (
+    <SBody>
+      <SSection>
+        <SDivTexts>
+          <SH1>Olá,</SH1>
+          <SP1>Para continuar navegando de forma segura, efetue o login</SP1>
+          <SH3>Login</SH3>
+        </SDivTexts>
+        <SForm action="" method="post">
+          <SInput
+            placeholder="Usuário"
+            type="text"
+            name="name-login"
+            backGroundImage={SvgUser}
+            disabled="disabled"
+            required
+          />
+          <SInput
+            placeholder="Senha"
+            type="password"
+            name="password-login"
+            backGroundImage={SvgPassword}
+            disabled="disabled"
+            required
+          />
+          <Warning />
+          <SButton type="submit">Logar-se</SButton>
+        </SForm>
+        <SP2>
+          Novo por aqui ?
+          <NavLink className="navbar-brand" to="/">
+            <SPLink>Registre-se</SPLink>
+          </NavLink>
+        </SP2>
+      </SSection>
+      <SSection>
+        <SImgLogo src={SvgLogo} />
+        <SImgBG src={backGroundImage} alt="Imagem de fundo"></SImgBG>
+      </SSection>
+    </SBody>
+  );
+}
 
 export default Login;

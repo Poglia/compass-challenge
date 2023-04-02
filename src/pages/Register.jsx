@@ -18,84 +18,86 @@ import SvgPassword from "../assets/icons/password.svg";
 import SvgConfirmPassword from "../assets/icons/passConfirm.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
-const Register = () => (
-  <SBody>
-    <SSection>
-      <SDivTexts>
-        <SH1>Olá,</SH1>
-        <SP1>Por favor, registre-se para continuar</SP1>
-        <SH3>Registro</SH3>
-      </SDivTexts>
-      <SForm action="" method="post">
-        <SInput
-          placeholder="Nome"
-          type="text"
-          name="name"
-          backGroundIcon={SvgName}
-          required
-        />
-        <SInput
-          placeholder="Usuário"
-          type="text"
-          name="user"
-          backGroundIcon={SvgUser}
-          disabled="disabled"
-          required
-        />
-        <SInput
-          placeholder="Nascimento"
-          type="text"
-          name="date"
-          backGroundIcon={SvgDate}
-          onFocus={(e) => {e.target.type = "date"}}
-          onBlur={(e) => {e.target.type = "text"}}
-          required
-        />
-        <SInput
-          placeholder="Email"
-          type="e-mail"
-          name="email"
-          backGroundIcon={SvgEmail}
-          disabled="disabled"
-          required
-        />
-        <SInput
-          placeholder="Senha"
-          type="password"
-          name="password" 
-          backGroundIcon={SvgPassword}
-          disabled="disabled"
-          required
-        />
-        <SInput
-          placeholder="Confirmar Senha"
-          type="password"
-          name="password-c"
-          backGroundIcon={SvgConfirmPassword}
-          disabled="disabled"
-          required
-        />
-        <SDivError>
-
-          
-        </SDivError>
-        <SButton type="submit" value="Logar-se">
-          Registrar-se
-        </SButton>
-      </SForm>
-      <SP2>
-        Já possui uma conta?
-        <NavLink className="navbar-brand" to="/login">
-          <SPLink>Faça Login</SPLink>
-        </NavLink>
-      </SP2>
-    </SSection>
-    <SSection>
-      
+function Register() {
+  return (
+    <SBody>
+      <SSection>
+        <SDivTexts>
+          <SH1>Olá,</SH1>
+          <SP1>Por favor, registre-se para continuar</SP1>
+          <SH3>Registro</SH3>
+        </SDivTexts>
+        <SForm action="" method="post">
+          <SInput
+            placeholder="Nome"
+            type="text"
+            name="name"
+            backGroundIcon={SvgName}
+            required
+          />
+          <SInput
+            placeholder="Usuário"
+            type="text"
+            name="user"
+            backGroundIcon={SvgUser}
+            disabled="disabled"
+            required
+          />
+          <SInput
+            placeholder="Nascimento"
+            type="text"
+            name="date"
+            backGroundIcon={SvgDate}
+            onFocus={(e) => {
+              e.target.type = "date";
+            }}
+            onBlur={(e) => {
+              e.target.type = "text";
+            }}
+            required
+          />
+          <SInput
+            placeholder="Email"
+            type="e-mail"
+            name="email"
+            backGroundIcon={SvgEmail}
+            disabled="disabled"
+            required
+          />
+          <SInput
+            placeholder="Senha"
+            type="password"
+            name="password"
+            backGroundIcon={SvgPassword}
+            disabled="disabled"
+            required
+          />
+          <SInput
+            placeholder="Confirmar Senha"
+            type="password"
+            name="password-c"
+            backGroundIcon={SvgConfirmPassword}
+            disabled="disabled"
+            required
+          />
+          <SDivError></SDivError>
+          <SButton type="submit" value="Logar-se">
+            Registrar-se
+          </SButton>
+        </SForm>
+        <SP2>
+          Já possui uma conta?
+          <NavLink className="navbar-brand" to="/login">
+            <SPLink>Faça Login</SPLink>
+          </NavLink>
+        </SP2>
+      </SSection>
+      <SSection>
         <SImgLogo src={SvgLogo} />
-      <SImgBG src={backGroundImage} alt="Imagem de fundo" />
-    </SSection>
-  </SBody>
-);
+        <SImgBG src={backGroundImage} alt="Imagem de fundo" />
+      </SSection>
+    </SBody>
+  );
+}
 
 export default Register;
