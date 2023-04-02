@@ -53,6 +53,7 @@ const Register = () => (
           type="e-mail"
           name="email"
           backGroundIcon={SvgEmail}
+          disabled="disabled"
         />
         <SInput
           placeholder="Senha"
@@ -66,6 +67,7 @@ const Register = () => (
           type="password"
           name="password-c"
           backGroundIcon={SvgConfirmPassword}
+          disabled="disabled"
         />
         <SButton type="submit" value="Logar-se">
           Registrar-se
