@@ -5,11 +5,11 @@ import {SDivError} from "../Form.style";
 
 function Warning(){
 
-    const [errorMessage, setErrorMessage] = useState('oui');
+    const [errorMessage, setErrorMessage] = useState(null);
     const [heightDiv, setHeightDiv] = useState(0);
 
     useEffect(()=>{
-        setHeightDiv(errorMessage != null ? "3vw" : 0);
+        setHeightDiv(errorMessage != null ? "2vw" : 0);
       },[errorMessage]);
 
     return (
