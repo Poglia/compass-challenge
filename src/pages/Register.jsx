@@ -44,6 +44,8 @@ const Register = () => (
           type="text"
           name="date"
           backGroundIcon={SvgDate}
+          onFocus={(e) => {e.target.type = "date"}}
+          onBlur={(e) => {e.target.type = "text"}}
         />
         <SInput
           placeholder="Email"
@@ -75,7 +77,8 @@ const Register = () => (
       </SP2>
     </SSection>
     <SSection>
-      <SImgLogo src={SvgLogo} />
+      
+        <SImgLogo src={SvgLogo} />
       <SImgBG src={backGroundImage} alt="Imagem de fundo" />
     </SSection>
   </SBody>
