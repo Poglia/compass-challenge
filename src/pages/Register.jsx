@@ -32,6 +32,7 @@ const Register = () => (
           type="text"
           name="name"
           backGroundIcon={SvgName}
+          required
         />
         <SInput
           placeholder="Usuário"
@@ -39,6 +40,7 @@ const Register = () => (
           name="user"
           backGroundIcon={SvgUser}
           disabled="disabled"
+          required
         />
         <SInput
           placeholder="Nascimento"
@@ -47,6 +49,7 @@ const Register = () => (
           backGroundIcon={SvgDate}
           onFocus={(e) => {e.target.type = "date"}}
           onBlur={(e) => {e.target.type = "text"}}
+          required
         />
         <SInput
           placeholder="Email"
@@ -54,6 +57,7 @@ const Register = () => (
           name="email"
           backGroundIcon={SvgEmail}
           disabled="disabled"
+          required
         />
         <SInput
           placeholder="Senha"
@@ -61,6 +65,7 @@ const Register = () => (
           name="password" 
           backGroundIcon={SvgPassword}
           disabled="disabled"
+          required
         />
         <SInput
           placeholder="Confirmar Senha"
@@ -68,6 +73,7 @@ const Register = () => (
           name="password-c"
           backGroundIcon={SvgConfirmPassword}
           disabled="disabled"
+          required
         />
         <SDivError>
 

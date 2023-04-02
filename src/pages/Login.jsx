@@ -31,6 +31,7 @@ const Login = () => (
           name="name-login"
           backGroundImage={SvgUser}
           disabled="disabled"
+          required
         />
         <SInput
           placeholder="Senha"
@@ -38,6 +39,7 @@ const Login = () => (
           name="password-login"
           backGroundImage={SvgPassword}
           disabled="disabled"
+          required
         />
         <Warning/>
         <SButton type="submit">Logar-se</SButton>
