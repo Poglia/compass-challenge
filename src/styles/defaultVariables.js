@@ -12,12 +12,12 @@ export const theme = {
     }
   },
   sizes: {
-    xsmall: '1rem',
-    small: '2rem',
-    medium: '3rem',
-    large: '4rem',
-    xlarge: '5rem',
-    hude: '6rem'
+    xsmall: '1vw',
+    small: '2vw',
+    medium: '3vw',
+    large: '4vw',
+    xlarge: '5vw',
+    hude: '6vw'
   },
   images: {
     // name: "../assets/icons/nome.svg",

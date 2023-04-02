@@ -7,6 +7,7 @@ export const SBody = styled.body`
 `;
 export const SSection = styled.section`
   width: 50%;
+  /* height: 100vw; */
   display: flex;
   align-items: center;
   flex-direction: column;

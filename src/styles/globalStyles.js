@@ -11,7 +11,8 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${theme.fonts.family.default};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-     overflow-y: hidden;
+     /* overflow-y: hidden; */
+     overflow-x: hidden;
 
  /* define o tamanho da fonte do elemento raiz */
      font-size: 16px;
@@ -23,34 +24,38 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   form {
-    width: 30rem;
     /* min-width: 300px; */
     /* background-color:red; */
   }
   
   h1{
     /* background-color:blue; */
-    width: 25rem;
-    margin: 1rem 0 2rem 0
+    width: 22vw;
+    margin: 1vw 0 3vw 2vw
   }
   
   h3{
-    margin: 2rem 0 0 0
+    margin: 2vw 0 0 2vw
   }
   
   p {
     /* background-color:green; */
+    margin: 0 0 0 2vw
     
   }
   
   section {
+    width:100%
+    height: 100%;
+    min-width: 500px;
+    /* max-width: 1000px; */
     /* background-color: purple */
     /* justify-content: space-between */
     /* max-height: 30%; */
   }
-
+/* 
   input{
-    /* height: 30px; */
-  }
+    transform: scale(0.5);
+  } */
 
 `;
