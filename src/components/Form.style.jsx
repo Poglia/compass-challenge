@@ -73,6 +73,11 @@ export const SButton = styled.button`
   font-size: 0.8vw;
 
   color: #f5f5f5;
+
+  &:hover {
+    cursor: pointer;
+  }
+
 `;
 
 export const SDivError = styled.div`

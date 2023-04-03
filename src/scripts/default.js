@@ -24,3 +24,7 @@ export function enableInputs() {
     });
   });
 }
+
+export function writeMessages() {
+  alert("tentou submit");
+}

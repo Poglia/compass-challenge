@@ -14,9 +14,13 @@ import SvgUser from "../assets/icons/user.svg";
 import SvgPassword from "../assets/icons/password.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
-import Warning from "../components/react/DivError";
+import Warning from "../components/react/Warning";
+import * as fDefault from "../scripts/default"
 
 function Login() {
+
+  fDefault.enableInputs();
+
   return (
     <SBody>
       <SSection>

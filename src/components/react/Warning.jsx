@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {theme} from "../../styles/defaultVariables"
 import {SP2} from "../Text.style";
 import {SDivError} from "../Form.style";
 
-function Warning(){
+import AppContext from "../../AppContext";
 
-    const [errorMessage, setErrorMessage] = useState(null);
-    const [heightDiv, setHeightDiv] = useState(0);
+function Warning(){
+    const [heightDiv, setHeightDiv] = useState(0);    
+    
+    const { errorMessage, setErrorMessage} = useContext(AppContext);
+
 
     useEffect(()=>{
         setHeightDiv(errorMessage != null ? "2vw" : 0);

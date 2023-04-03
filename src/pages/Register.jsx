@@ -1,6 +1,7 @@
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import backGroundImage from "../assets/icons/background.svg";
-import { SButton, SForm, SInput, SDivError } from "../components/Form.style";
+import { SButton, SForm, SInput } from "../components/Form.style";
 import {
   SBody,
   SSection,
@@ -18,7 +19,24 @@ import SvgPassword from "../assets/icons/password.svg";
 import SvgConfirmPassword from "../assets/icons/passConfirm.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
+import * as fDefault from "../scripts/default";
+
+import Warning from "../components/react/Warning";
+
+
 function Register() {
+  fDefault.enableInputs();
+
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+
+  
+  // const passwordComfirm = useRef("oi");
+
+  function coparePasswords() {
+    alert(password + passwordConfirm);
+  }
+
   return (
     <SBody>
       <SSection>
@@ -68,6 +86,8 @@ function Register() {
             placeholder="Senha"
             type="password"
             name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             backGroundIcon={SvgPassword}
             disabled="disabled"
             required
@@ -77,11 +97,21 @@ function Register() {
             type="password"
             name="password-c"
             backGroundIcon={SvgConfirmPassword}
+            value={passwordConfirm}
+            onChange={(e) => {
+              setPasswordConfirm(e.target.value);
+              coparePasswords();
+            }}
+            // onChange={coparePasswords(this)}
             disabled="disabled"
             required
           />
-          <SDivError></SDivError>
-          <SButton type="submit" value="Logar-se">
+          <Warning></Warning>
+          <SButton
+            type="submit"
+            value="Logar-se"
+            onClick={fDefault.writeMessages}
+          >
             Registrar-se
           </SButton>
         </SForm>
