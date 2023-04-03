@@ -56,7 +56,7 @@ export const SInput = styled.input`
 `;
 
 export const SButton = styled.button`
-  margin: 1vw 0vw 1vw 0vw;
+  margin: 1.5vw 0vw 1vw 0vw;
   width: 22vw;
   height: 2.5vw;
   /* min-width: 150px; */

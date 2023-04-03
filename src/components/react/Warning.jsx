@@ -13,7 +13,7 @@ function Warning(){
     // const arrMessages = errorMessage.split(".");
     useEffect(()=>{
         setHeightDiv(sizeObject !== 0 ? (sizeObject + "vw") : 0);
-      },[errorMessage]);
+      });
 
     return (
         <SDivError style={{height: heightDiv}}>
