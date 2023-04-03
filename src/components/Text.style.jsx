@@ -10,7 +10,7 @@ export const SH1 = styled.h1`
 export const SH3 = styled.h3`
   color: ${theme.colors.text};
   font-weight: 400;
-  font-size: 1.5vw ;
+  font-size: 1.5vw;
 `;
 
 export const SP1 = styled.p`
@@ -24,7 +24,6 @@ export const SP2 = styled.p`
   color: ${theme.colors.text};
   font-weight: 400;
   font-size: 0.8vw;
-  
 `;
 
 export const SPLink = styled.p`

@@ -9,12 +9,34 @@ export const SForm = styled.form`
 `;
 
 export const SInput = styled.input`
+  font-size: 0.8vw;
+  color: white;
+
+  background-color: transparent;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 22vw;
+  height: 2.5vw;
+  min-width: 50px;
+  max-width: 500px;
+  min-height: 15px;
+
+  border: 0.1vw solid #f5f5f5;
+  border-radius: 100px;
+
+  margin-top: 1.2vw;
+  padding: 1.5vw 1.5vw;
+
   ${({ backGroundIcon }) => css`
     background-image: url(${backGroundIcon});
     background-repeat: no-repeat;
     background-position: 19vw, center;
     background-size: 1vw;
-    /* webkit-calendar-picker-indicator: opacity: 0;         */
   `}
 
   ::placeholder {
@@ -26,42 +48,18 @@ export const SInput = styled.input`
   &:focus {
     outline: none;
   }
-
-  font-size: 0.8vw;
-
-  /* -webkit-box-shadow: 0 0 0px 1000px transparent inset; */
-  /* -webkit-text-fill-color: #000000 !important;  */
-
-  background-color: transparent;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5vw 1.5vw;
-
-  width: 22vw;
-  height: 2.5vw;
-  min-width: 50px;
-  max-width: 500px;
-  min-height: 15px;
-
-  /* font-size: 0.8pw; */
-
-  border: 0.1vw solid #f5f5f5;
-  border-radius: 100px;
-  margin-top: 1.2vw;
-  color: white;
 `;
 
 export const SButton = styled.button`
-  margin: 1.5vw 0vw 1vw 0vw;
   width: 22vw;
   height: 2.5vw;
-  /* min-width: 150px; */
   max-width: 500px;
+
+  color: #f5f5f5;
+
+  margin: 1.5vw 0vw 1vw 0vw;
   padding: 1.5vw 1.5vw;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,8 +73,6 @@ export const SButton = styled.button`
   font-style: normal;
   font-weight: 500;
   font-size: 0.8vw;
-
-  color: #f5f5f5;
 
   &:hover {
     cursor: pointer;
