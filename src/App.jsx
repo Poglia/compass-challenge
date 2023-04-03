@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { GlobalStyles } from './styles/globalStyles';
-import Register from "./pages/Register";
+import { GlobalStyles } from "./styles/globalStyles";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 
 
 function App() {
