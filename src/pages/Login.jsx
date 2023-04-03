@@ -44,16 +44,16 @@ function Login() {
               placeholder="Usuário"
               type="text"
               name="name-login"
-              backGroundImage={SvgUser}
-              disabled={true}
+              backGroundIcon={SvgUser}
+              disabled="disabled"
               required
             />
             <SInput
               placeholder="Senha"
               type="password"
               name="password-login"
-              backGroundImage={SvgPassword}
-              disabled={true}
+              backGroundIcon={SvgPassword}
+              disabled="disabled"
               required
             />
             <Warning />
