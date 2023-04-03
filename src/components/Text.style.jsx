@@ -24,6 +24,7 @@ export const SP2 = styled.p`
   color: ${theme.colors.text};
   font-weight: 400;
   font-size: 0.8vw;
+  
 `;
 
 export const SPLink = styled.p`

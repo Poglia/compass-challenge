@@ -16,12 +16,16 @@ import SvgLogo from "../assets/icons/logo.svg";
 
 import Warning from "../components/react/Warning";
 import * as fDefault from "../scripts/default"
+import AppContext from "../AppContext";
+import { useState } from "react";
 
 function Login() {
 
-  fDefault.enableInputs();
+  fDefault.enableInputs("login");
+  const [errorMessage, setErrorMessage] = useState([]);
 
   return (
+    <AppContext.Provider value={{ errorMessage, setErrorMessage }}>
     <SBody>
       <SSection>
         <SDivTexts>
@@ -35,7 +39,7 @@ function Login() {
             type="text"
             name="name-login"
             backGroundImage={SvgUser}
-            disabled="disabled"
+            disabled={true}
             required
           />
           <SInput
@@ -43,7 +47,7 @@ function Login() {
             type="password"
             name="password-login"
             backGroundImage={SvgPassword}
-            disabled="disabled"
+            disabled={true}
             required
           />
           <Warning />
@@ -61,6 +65,7 @@ function Login() {
         <SImgBG src={backGroundImage} alt="Imagem de fundo"></SImgBG>
       </SSection>
     </SBody>
+    </AppContext.Provider>
   );
 }
 

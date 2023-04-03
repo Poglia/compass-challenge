@@ -4,15 +4,14 @@
  * The disabling serves to prevent the autocomplete of browsers like Chrome
  *
  */
-export function enableInputs() {
-  let disableElementNames = [
-    "email",
-    "user",
-    "password",
-    "password-c",
-    "name-login",
-    "password-login",
-  ];
+export function enableInputs(screen) {
+  let disableElementNames = [];
+
+  if (screen === "login") {
+    disableElementNames.push("name-login", "password-login");
+  } else {
+    disableElementNames.push("user", "password", "email", "password-c");
+  }
 
   function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -20,6 +19,7 @@ export function enableInputs() {
 
   disableElementNames.forEach((element) => {
     sleep(1000).then(async () => {
+     if(document.getElementsByName(element)[0].disabled === true)
       document.getElementsByName(element)[0].disabled = false;
     });
   });

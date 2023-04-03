@@ -7,17 +7,19 @@ import AppContext from "../../AppContext";
 
 function Warning(){
     const [heightDiv, setHeightDiv] = useState(0);    
+    const { errorMessage } = useContext(AppContext);
+    const sizeObject = Object.keys(errorMessage).length;
     
-    const { errorMessage, setErrorMessage} = useContext(AppContext);
-
-
+    // const arrMessages = errorMessage.split(".");
     useEffect(()=>{
-        setHeightDiv(errorMessage != null ? "2vw" : 0);
+        setHeightDiv(sizeObject !== 0 ? (sizeObject + "vw") : 0);
       },[errorMessage]);
 
     return (
         <SDivError style={{height: heightDiv}}>
-            <SP2 style={{color: theme.colors.textError}}>{errorMessage}</SP2>
+             {errorMessage.map((message) => (
+            <SP2 style={{color: theme.colors.textError}}>{message}</SP2>
+      ))}
         </SDivError>
     )
 }

@@ -23,6 +23,10 @@ export const SInput = styled.input`
     justify-content: center;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   font-size: 0.8vw;
 
   /* -webkit-box-shadow: 0 0 0px 1000px transparent inset; */
@@ -77,11 +81,10 @@ export const SButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-
 `;
 
 export const SDivError = styled.div`
   margin-top: 10px;
   color: ${theme.colors.textError}
   display: flex;
-`
+`;
