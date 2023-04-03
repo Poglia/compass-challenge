@@ -8,18 +8,17 @@ export const theme = {
   },
   fonts: {
     family: {
-        default: 'Poppins, sans-serif'
-    }
+      default: "Poppins, sans-serif",
+    },
   },
   sizes: {
-    xsmall: '1vw',
-    small: '2vw',
-    medium: '3vw',
-    large: '4vw',
-    xlarge: '5vw',
-    hude: '6vw'
+    xxsmall: "0.3vw",
+    xsmall: "0.8vw",
+    small: "1vw",
+    medium: "1.5vw",
+    large: "2.5vw",
+    xlarge: "5vw",
+    xxlarge: "20vw",
+    xxxlarge: "22vw",
   },
-  images: {
-    // name: "../assets/icons/nome.svg",
-  }
 };

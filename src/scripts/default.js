@@ -19,12 +19,8 @@ export function enableInputs(screen) {
 
   disableElementNames.forEach((element) => {
     sleep(1000).then(async () => {
-     if(document.getElementsByName(element)[0].disabled === true)
-      document.getElementsByName(element)[0].disabled = false;
+      if (document.getElementsByName(element)[0].disabled === true)
+        document.getElementsByName(element)[0].disabled = false;
     });
   });
-}
-
-export function writeMessages() {
-  alert("tentou submit");
 }
