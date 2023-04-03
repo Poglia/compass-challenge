@@ -1,8 +1,11 @@
 import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import AppContext from "../AppContext";
 
 import backGroundImage from "../assets/icons/background.svg";
+import * as fDefault from "../scripts/default";
 
+// Import Component-Styles
 import { SButton, SForm, SInput } from "../components/Form.style";
 import {
   SBody,
@@ -13,6 +16,7 @@ import {
 } from "../components/Body.style";
 import { SH1, SH3, SP1, SP2, SPLink } from "../components/Text.style";
 
+// Import SVGs
 import SvgName from "../assets/icons/name.svg";
 import SvgUser from "../assets/icons/user.svg";
 import SvgDate from "../assets/icons/date.svg";
@@ -21,73 +25,78 @@ import SvgPassword from "../assets/icons/password.svg";
 import SvgConfirmPassword from "../assets/icons/passConfirm.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
-import * as fDefault from "../scripts/default";
-
+// Import Warning Component
 import Warning from "../components/react/Warning";
-import AppContext from "../AppContext";
+
+// Import Default Variables - Colors, Fonts...
 import { theme } from "../styles/defaultVariables";
 
 function Register() {
-  const [canSubmit, setCanSubmit] = useState(true); // Submit By Default
   fDefault.enableInputs("register");
+
+  const [canSubmit, setCanSubmit] = useState(true); // Submit By Default
+  const [errorMessage, setErrorMessage] = useState([]);
 
   const password = useRef(null);
   const passwordConfirm = useRef(null);
   const user = useRef(null);
-  const email = useRef("");
+  const email = useRef(null);
 
-  const [colorInputPw, setColorInputpw] = useState("white");
-  const [colorInputUser, setColorInputUser] = useState("white");
-  const [colorInputEmail, setColorInputEmail] = useState("white");
+  const [colorInputPw, setColorInputpw] = useState(theme.colors.text);
+  const [colorInputUser, setColorInputUser] = useState(theme.colors.text);
+  const [colorInputEmail, setColorInputEmail] = useState(theme.colors.text);
 
-  const [errorMessage, setErrorMessage] = useState([]);
-
+  /**
+   * Executes the validations present in the form
+   * Call on the onBlur of the fields
+   */
   function formValidate() {
     const okUser = userValidate();
     const okEmail = emailValidate();
-    let okPassword = passwordValidate();
+    const okPassword = passwordValidate();
 
     setCanSubmit(okUser && okEmail && okPassword);
   }
 
+  /**
+   * Checks the input of name=user
+   * Validates if there are spaces in the value
+   * @returns bool
+   */
   function userValidate() {
-    let userErrorMessage = "O usuário não pode conter espaços.";
-    const userValido = user.current.value;
-    if (userValido.indexOf(" ") !== -1) {
-      // TEM ERRO
-
+    const userErrorMessage = "O usuário não pode conter espaços.";
+    const validUser = user.current.value;
+    if (validUser.indexOf(" ") !== -1) {
       if (!errorMessage.includes(userErrorMessage)) {
-        // AINDA NAO EXISTE NO ARRAY
         setColorInputUser(theme.colors.textError);
         setErrorMessage([...errorMessage, userErrorMessage]);
       }
-
       return false;
     } else {
       setColorInputUser(theme.colors.text);
       setErrorMessage(errorMessage.filter((msg) => msg !== userErrorMessage));
-      return true;
+
+      return true; // Submit
     }
   }
 
+  /**
+   * Checks the input of name=email
+   * Validates if it has the @ character
+   * @returns
+   */
   function emailValidate() {
-    let emailErrorMessage = "Insira um E-mail válido.";
-    const emailValido = email.current.value;
-    if (emailValido.indexOf("@") === -1 && emailValido !== "") {
-      // TEM ERRO
-      console.log("ENTROU NO IF DO EMAIL");
+    const emailErrorMessage = "Insira um E-mail válido.";
+    const validEmail = email.current.value;
+
+    if (validEmail.indexOf("@") === -1 && validEmail !== "") {
       if (!errorMessage.includes(emailErrorMessage)) {
-        console.log("IF -> IF");
-        // AINDA NAO EXISTE NO ARRAY
         setErrorMessage([...errorMessage, emailErrorMessage]);
         setColorInputEmail(theme.colors.textError);
       }
       return false;
     } else {
-      console.log("ELSE");
-      // NAO TEM ERRO
       if (errorMessage.indexOf(emailErrorMessage) !== -1) {
-        console.log("ELSE -> IF");
         setErrorMessage(
           errorMessage.filter((msg) => msg !== emailErrorMessage)
         );
@@ -97,8 +106,13 @@ function Register() {
     }
   }
 
+  /**
+   * Check the inputs of name=password and name=password-c
+   * Validate if they are equal
+   * @returns
+   */
   function passwordValidate() {
-    let errorMsgPassword = "As senhas devem ser iguais.";
+    const errorMsgPassword = "As senhas devem ser iguais.";
     if (
       password.current.value !== passwordConfirm.current.value &&
       passwordConfirm.current.value !== ""
@@ -118,18 +132,6 @@ function Register() {
       return true;
     }
   }
-
-  /*
-  const handleRemove = (fruitToRemove) => {
-    const index = fruits.indexOf(fruitToRemove);
-    if (index !== -1) {
-      const newFruits = [...fruits];
-      newFruits.splice(index, 1);
-      setFruits(newFruits);
-    }
-  }
-
-  */
 
   return (
     <AppContext.Provider value={{ errorMessage, setErrorMessage }}>
@@ -207,12 +209,7 @@ function Register() {
               required
             />
             <Warning></Warning>
-            <SButton
-              // onClick={formValidate}
-              type="submit"
-              value="Logar-se"
-              disabled={!canSubmit}
-            >
+            <SButton type="submit" value="Logar-se" disabled={!canSubmit}>
               Registrar-se
             </SButton>
           </SForm>
