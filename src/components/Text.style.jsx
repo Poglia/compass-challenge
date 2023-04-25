@@ -26,7 +26,7 @@ export const SP2 = styled.p`
   font-size: 0.8vw;
 `;
 
-export const SPLink = styled.p`
+export const SPLink = styled.span`
   display: inline;
   margin-left: 0.3vw;
   font-weight: 500;

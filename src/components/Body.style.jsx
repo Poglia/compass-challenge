@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SBody = styled.body`
+export const SBody = styled.div`
   background: linear-gradient(180deg, #2e2f36 0%, #17181c 100%);
   display: flex;
   font-family: "Poppins", sans-serif;
