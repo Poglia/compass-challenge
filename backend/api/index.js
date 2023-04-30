@@ -1,16 +1,15 @@
-const express = require('express');
-const cors = require('cors');
-const rotas = require('./routes/rotas')
-
-const app = express();
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const routes = require('./routes/routes');
+const app = (0, express_1.default)();
 const door = 3002;
-
-app.use(express.json());
-app.use(express.urlencoded({extended : false}));
-app.use(cors());
-
-app.use(rotas);
-
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: false }));
+app.use(routes);
 app.listen(process.env.PORT || door, () => {
     console.log('Servidor da API rodando na porta ' + door);
-})
+});
