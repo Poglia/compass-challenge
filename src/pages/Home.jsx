@@ -17,21 +17,10 @@ import {
   SSectionLeft,
   SSectionMain,
   SSectionCenter,
-  SSectionNewPost,
-  SSectionPosts,
   SSectionRight,
   SSectionHeader,
-  SSectionPost,
   SSectionSquare,
   SImgLogo,
-  SIconUser,
-  SInputMessage,
-  SNewPostLawer1,
-  SNewPostLawer2,
-  SVgTools,
-  SButtonPost,
-  SAreaTools,
-  SAreaButton,
   SHeaderAreaHome,
   SHeaderAreaUser,
   SIconHome,
@@ -40,8 +29,22 @@ import {
   SAreaListFriend,
   SFriend,
   SFriendPhoto,
-  SFriendName
+  SFriendName,
 } from "../styles/Home.style";
+
+import {
+  SSectionPosts,
+  SSectionPost,
+  SButtonPost,
+  SSectionNewPost,
+  SNewPostLawer1,
+  SNewPostLawer2,
+  SIconUser,
+  SInputMessage,
+  SVgTools,
+  SAreaTools,
+  SAreaButton,
+} from "../styles/HomePosts.style";
 
 function Home() {
   return (
@@ -55,8 +58,9 @@ function Home() {
             <SIconHome src={SvgHome}></SIconHome>
             <SHeaderH3>Home</SHeaderH3>
           </SHeaderAreaHome>
-          <SHeaderAreaUser><h2>Name Foto</h2></SHeaderAreaUser>
-          
+          <SHeaderAreaUser>
+            <h2>Name Foto</h2>
+          </SHeaderAreaUser>
         </SSectionHeader>
         <SSectionCenter>
           <SSectionPost>
@@ -74,8 +78,7 @@ function Home() {
                   <SVgTools src={SvgEmoji}></SVgTools>
                 </SAreaTools>
                 <SAreaButton>
-
-                <SButtonPost>Postar</SButtonPost>
+                  <SButtonPost>Postar</SButtonPost>
                 </SAreaButton>
               </SNewPostLawer2>
             </SSectionNewPost>
@@ -109,10 +112,8 @@ function Home() {
                 </SFriend>
               </SAreaListFriend>
             </SSectionSquare>
-            <SSectionSquare>
-            </SSectionSquare>
-            <SSectionSquare>
-            </SSectionSquare>
+            <SSectionSquare></SSectionSquare>
+            <SSectionSquare></SSectionSquare>
           </SSectionRight>
         </SSectionCenter>
       </SSectionMain>
