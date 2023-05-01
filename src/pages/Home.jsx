@@ -83,11 +83,7 @@ function Home() {
               </SNewPostLawer2>
             </SSectionNewPost>
             <SSectionPosts>
-              <h3>posts</h3>
-              <h3>posts</h3>
-              <h3>posts</h3>
-              <h3>posts</h3>
-              <h3>posts</h3>
+             {"HERE"}
             </SSectionPosts>
           </SSectionPost>
           <SSectionRight>

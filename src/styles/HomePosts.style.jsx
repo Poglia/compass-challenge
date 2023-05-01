@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 import { theme } from "./defaultVariables";
 
+// styledTypeAreaSubareaSubarea....
+
 export const SSectionPosts = styled.section`
   background-color: ${theme.colors.backgroundColorSecundary};
   min-height: 100vh;
@@ -9,7 +11,14 @@ export const SSectionPosts = styled.section`
   border-radius: 16px;
 `;
 
-// Area POSTS
+export const SSectionNewPost = styled.section`
+  background-color: ${theme.colors.backgroundColorSecundary};
+  height: 19vh;
+  border: 2px solid #2e2f36;
+  border-radius: 16px;
+  margin: 20px;
+`;
+
 export const SSectionPost = styled.section`
   width: 80%;
   min-width: 30%;
@@ -91,10 +100,35 @@ export const SAreaTools = styled.div`
   margin-left: 2%;
 `;
 
-export const SSectionNewPost = styled.section`
-  background-color: ${theme.colors.backgroundColorSecundary};
-  height: 19vh;
-  border: 2px solid #2e2f36;
-  border-radius: 16px;
-  margin: 20px;
-`;
+export const SSectionHeaderPost = styled.section``;
+export const SImgHeaderPostPhoto = styled.img``;
+export const SSectionHeaderPostNameDate = styled.section``;
+export const STextHeaderPostName = styled.text``;
+export const SSectionHeaderPostDateLocal = styled.section``;
+export const STextHeaderPostDate = styled.text``;
+export const STextHeaderPostLocal = styled.text``;
+
+export const STextPostText = styled.text``;
+export const SImgPost = styled.img``;
+
+export const SSectionFooterPost = styled.section``;
+export const SSectionFooterPostIcons = styled.section``;
+export const SSectionFooterIconText = styled.section``;
+export const SImgFooterPostIcon = styled.img``;
+export const STextFooterPostTexticon = styled.text``;
+export const SSectionFooterComment = styled.section``;
+export const SImgFooterCommentPhoto = styled.img``;
+
+export const SSectionFooterCommentInput = styled.section``;
+export const SInputFooterComment = styled.input``;
+export const SSectionFooterIcons = styled.section``;
+export const SImgFooterIcon = styled.img``;
+
+export const SSectionComments = styled.section``;
+export const STextCommentsTitle = styled.text``;
+export const SImgComments = styled.img``;
+export const STextCommentsName = styled.text``;
+export const STextCommentsComment = styled.text``;
+
+export const SSectionButtonComments = styled.section``;
+export const SButtonComments = styled.button``;

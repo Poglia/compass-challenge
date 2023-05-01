@@ -85,7 +85,7 @@ export const SSectionRight = styled.section`
 
 export const SSectionSquare = styled.section`
   background-color: ${theme.colors.backgroundColorSecundary};
-  height: 12vw;
+  height: 12.5vw;
   min-width: 14vw;
   border: 2px solid #2e2f36;
   border-radius: 16px;
@@ -127,12 +127,12 @@ export const SFriend = styled.div`
 
 export const SFriendPhoto = styled.img`
   border-radius: 100%;
-  height: 2.2vw;
+  height: 2vw;
   padding-left: 10px;
 `;
 export const SFriendName = styled.h3`
   padding-left: 10px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 24px;
 `;
