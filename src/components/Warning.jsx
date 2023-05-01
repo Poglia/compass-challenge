@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 
 // Import Default Variables - Colors, Fonts...
-import { theme } from "../../styles/defaultVariables";
+import { theme } from "../styles/defaultVariables";
 
 // Import Component-Styles
-import { SP2 } from "../Text.style";
-import { SDivError } from "../Form.style";
+import { SP2 } from "../styles/Text.style";
+import { SDivError } from "../styles/Form.style";
 
-import AppContext from "../../AppContext";
+import AppContext from "../AppContext";
 
 function Warning() {
   const [heightDiv, setHeightDiv] = useState(0);

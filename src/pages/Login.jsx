@@ -6,15 +6,15 @@ import backGroundImage from "../assets/icons/background.svg";
 import * as fDefault from "../scripts/default";
 
 // Import Component-Styles
-import { SButton, SForm, SInput } from "../components/Form.style";
+import { SButton, SForm, SInput } from "../styles/Form.style";
 import {
   SBody,
   SSection,
   SImgBG,
   SImgLogo,
   SDivTexts,
-} from "../components/Body.style";
-import { SH1, SP1, SP2, SH3, SPLink } from "../components/Text.style";
+} from "../styles/Body.style";
+import { SH1, SP1, SP2, SH3, SPLink } from "../styles/Text.style";
 
 // Import SVGs
 import SvgUser from "../assets/icons/user.svg";
@@ -22,7 +22,7 @@ import SvgPassword from "../assets/icons/password.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
 // Import Warning Component
-import Warning from "../components/react/Warning";
+import Warning from "../components/Warning";
 
 function Login() {
   fDefault.enableInputs("login");

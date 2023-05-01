@@ -6,15 +6,15 @@ import backGroundImage from "../assets/icons/background.svg";
 import * as fDefault from "../scripts/default";
 
 // Import Component-Styles
-import { SButton, SForm, SInput } from "../components/Form.style";
+import { SButton, SForm, SInput } from "../styles/Form.style";
 import {
   SBody,
   SSection,
   SImgBG,
   SImgLogo,
   SDivTexts,
-} from "../components/Body.style";
-import { SH1, SH3, SP1, SP2, SPLink } from "../components/Text.style";
+} from "../styles/Body.style";
+import { SH1, SH3, SP1, SP2, SPLink } from "../styles/Text.style";
 
 // Import SVGs
 import SvgName from "../assets/icons/name.svg";
@@ -26,7 +26,7 @@ import SvgConfirmPassword from "../assets/icons/passConfirm.svg";
 import SvgLogo from "../assets/icons/logo.svg";
 
 // Import Warning Component
-import Warning from "../components/react/Warning";
+import Warning from "../components/Warning";
 
 // Import Default Variables - Colors, Fonts...
 import { theme } from "../styles/defaultVariables";

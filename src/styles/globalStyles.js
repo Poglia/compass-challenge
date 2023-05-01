@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
      overflow-x: hidden;
+     background-color: ${theme.colors.backgroundColor};
 
   }
 
@@ -26,19 +27,13 @@ export const GlobalStyles = createGlobalStyle`
     transform: scale(calc(1vw / 100));
   }
   
-  h3{
-    margin: 2vw 0 0 1vw
-  }
-  
   p {
-    margin: 0 0 0 1vw
-    
+    margin: 0 0 0 1vw 
   }
   
   section {
-    width:100%;
+    /* width:100%; */
     height: 100%;
-    min-width: 500px;
-   
+    /* min-width: 500px; */
   }
 `;

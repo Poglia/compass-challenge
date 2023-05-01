@@ -11,6 +11,7 @@ export const SH3 = styled.h3`
   color: ${theme.colors.text};
   font-weight: 400;
   font-size: 1.5vw;
+   margin: 2vw 0 0 1vw
 `;
 
 export const SP1 = styled.p`
