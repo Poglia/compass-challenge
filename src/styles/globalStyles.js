@@ -1,18 +1,20 @@
-import { createGlobalStyle } from "styled-components";
-import { theme } from "./defaultVariables";
-
-export const GlobalStyles = createGlobalStyle`
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GlobalStyles = void 0;
+const styled_components_1 = require("styled-components");
+const defaultVariables_1 = require("./defaultVariables");
+exports.GlobalStyles = (0, styled_components_1.createGlobalStyle) `
   * {
     margin: 0;
     padding: 0;
   }
 
   body {
-    font-family: ${theme.fonts.family.default};
+    font-family: ${defaultVariables_1.theme.fonts.family.default};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
      overflow-x: hidden;
-     background-color: ${theme.colors.backgroundColor};
+     background-color: ${defaultVariables_1.theme.colors.backgroundColor};
 
   }
 
@@ -37,3 +39,4 @@ export const GlobalStyles = createGlobalStyle`
     /* min-width: 500px; */
   }
 `;
+//# sourceMappingURL=globalStyles.js.map

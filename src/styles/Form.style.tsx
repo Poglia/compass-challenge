@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components";
 import { theme } from "../styles/defaultVariables";
 
+interface Props {
+  backGroundIcon: string;
+}
+
 export const SForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -32,7 +36,7 @@ export const SInput = styled.input`
   margin-top: 1.2vw;
   padding: 1.5vw 1.5vw;
 
-  ${({ backGroundIcon }) => css`
+  ${({ backGroundIcon }: Props) => css`
     background-image: url(${backGroundIcon});
     background-repeat: no-repeat;
     background-position: 19vw, center;
@@ -81,6 +85,6 @@ export const SButton = styled.button`
 
 export const SDivError = styled.div`
   margin-top: 10px;
-  color: ${theme.colors.textError}
+  color: ${theme.colors.textError};
   display: flex;
 `;
