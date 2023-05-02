@@ -85,6 +85,23 @@ function Home() {
   const [friends, setFriends] = useState([]);
   const [posts, setPosts] = useState([]);
 
+  function formatDate(date) {
+    const moment = require("moment");
+
+    console.log(date);
+    const diffMinutes = moment().diff(moment(date), "minutes");
+    const diffHours = moment().diff(moment(date), "hours");
+    const diffDays = moment().diff(moment(date), "days");
+
+    if (diffDays > 0) {
+      return diffDays + " dias atrás";
+    } else if (diffHours > 0) {
+      return diffHours + " horas atrás";
+    } else {
+      return diffMinutes + " minutos atrás";
+    }
+  }
+
   useEffect(() => {
     fetch("http://localhost:3002/users")
       .then((response) => response.json())
@@ -142,6 +159,90 @@ function Home() {
                 </SAreaButton>
               </SNewPostLawer2>
             </SSectionNewPost>
+            {posts.map((post) => (
+              <SSectionPosts>
+                <SSectionHeaderPost>
+                  <SImgHeaderPostPhoto src={Macaco}></SImgHeaderPostPhoto>
+                  <SSectionHeaderPostNameDate>
+                    <STextHeaderPostName>{post.user}</STextHeaderPostName>
+                    <SSectionHeaderPostDateLocal>
+                      <SImgHeaderPostDateIcon
+                        src={SvgClock}
+                      ></SImgHeaderPostDateIcon>
+                      <STextHeaderPostDate>
+                        {formatDate(post.post_date)}
+                      </STextHeaderPostDate>
+                      <STextHeaderPostLocal>
+                        Paisagens Exuberantes
+                      </STextHeaderPostLocal>
+                    </SSectionHeaderPostDateLocal>
+                  </SSectionHeaderPostNameDate>
+                </SSectionHeaderPost>
+                <STextPostText>
+                  Texto do post ahahhah ahahhah ahaha Texto do post ahahhah
+                  ahahhah ahaha Texto do post ahahhah ahahhah ahaha Texto do
+                  post ahahhah ahahhah ahaha Texto do post ahahhah ahahhah ahaha
+                  Texto do post ahahhah ahahhah ahaha Texto do post ahahhah
+                  ahahhah ahahaTexto do post ahahhah ahahhah ahaha Texto do post
+                  ahahhah ahahhah ahahaTexto do post ahahhah ahahhah
+                </STextPostText>
+                <SImgPost src={Exemplo}></SImgPost>
+                <SSectionFooterPost>
+                  <SSectionFooterPostIcons>
+                    <SSectionFooterIconText>
+                      <SImgFooterPostIcon src={SvgLike}></SImgFooterPostIcon>
+                      <STextFooterPostTexticon>Curtiu</STextFooterPostTexticon>
+                    </SSectionFooterIconText>
+                    <SSectionFooterIconText>
+                      <SImgFooterPostIcon src={SvgComment}></SImgFooterPostIcon>
+                      <STextFooterPostTexticon>
+                        Comentários
+                      </STextFooterPostTexticon>
+                    </SSectionFooterIconText>
+                    <SSectionFooterIconText>
+                      <SImgFooterPostIcon src={SvgShare}></SImgFooterPostIcon>
+                      <STextFooterPostTexticon>
+                        Compartilhar
+                      </STextFooterPostTexticon>
+                    </SSectionFooterIconText>
+                  </SSectionFooterPostIcons>
+                  <SSectionFooterComment>
+                    <SImgFooterCommentPhoto
+                      src={Macaco}
+                    ></SImgFooterCommentPhoto>
+                    <SSectionFooterCommentInput>
+                      <SInputFooterComment placeholder="No que você está pesando?"></SInputFooterComment>
+                      <SSectionFooterIcons>
+                        <SImgFooterIcon src={SvgCamera}></SImgFooterIcon>
+                        <SImgFooterIcon src={SvgPhoto}></SImgFooterIcon>
+                        <SImgFooterIcon src={SvgFile}></SImgFooterIcon>
+                        <SImgFooterIcon src={SvgLocal}></SImgFooterIcon>
+                        <SImgFooterIcon src={SvgEmoji}></SImgFooterIcon>
+                      </SSectionFooterIcons>
+                    </SSectionFooterCommentInput>
+                  </SSectionFooterComment>
+                </SSectionFooterPost>
+                <SSectionComments>
+                  <STextCommentsTitle>Todos os comentários</STextCommentsTitle>
+                  <SSectionComment>
+                    <SImgComments src={Macaco}></SImgComments>
+                    <STextCommentsName>Junior Saraiva: </STextCommentsName>
+                    <STextCommentsComment>
+                      Que bela paisagem! As cores são simplesmente
+                      deslumbrantes.. Que bela paisagem! As cores são
+                      simplesmente deslumbrantes.. Que bela paisagem! As cores
+                      são simplesmente deslumbrantes.. Que bela paisagem! As
+                      cores são simplesmente deslumbrantes.. Que bela paisagem!
+                      As cores são simplesmente deslumbrantes..
+                    </STextCommentsComment>
+                  </SSectionComment>
+                </SSectionComments>
+                <SSectionButtonComments>
+                  <SButtonComments>Ver todos os Comentários</SButtonComments>
+                </SSectionButtonComments>
+              </SSectionPosts>
+            ))}
+
             <SSectionPosts>
               <SSectionHeaderPost>
                 <SImgHeaderPostPhoto src={Macaco}></SImgHeaderPostPhoto>
@@ -152,7 +253,7 @@ function Home() {
                       src={SvgClock}
                     ></SImgHeaderPostDateIcon>
                     <STextHeaderPostDate>
-                      12 minutos atras em{" "}
+                      12 minutos atras em
                     </STextHeaderPostDate>
                     <STextHeaderPostLocal>
                       Paisagens Exuberantes
