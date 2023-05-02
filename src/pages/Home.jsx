@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
+
 
 import SvgLogo from "../assets/icons/logo.svg";
 import Macaco from "../assets/icons/macaco.jpg";
@@ -82,6 +84,7 @@ import {
 } from "../styles/HomePosts.style";
 
 function Home() {
+  
   const [friends, setFriends] = useState([]);
   const [posts, setPosts] = useState([]);
 
