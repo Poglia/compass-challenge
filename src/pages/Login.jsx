@@ -61,7 +61,7 @@ function Login() {
           </SForm>
           <SP2>
             Novo por aqui ?
-            <NavLink className="navbar-brand" to="/">
+            <NavLink className="navbar-brand" to="/register">
               <SPLink>Registre-se</SPLink>
             </NavLink>
           </SP2>
