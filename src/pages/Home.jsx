@@ -88,7 +88,6 @@ function Home() {
   function formatDate(date) {
     const moment = require("moment");
 
-    console.log(date);
     const diffMinutes = moment().diff(moment(date), "minutes");
     const diffHours = moment().diff(moment(date), "hours");
     const diffDays = moment().diff(moment(date), "days");
