@@ -5,10 +5,11 @@ import { theme } from "./defaultVariables";
 
 export const SSectionPosts = styled.section`
   background-color: ${theme.colors.backgroundColorSecundary};
-  min-height: 100vh;
+  min-height: 60vh;
   margin: 20px;
   border: 2px solid #2e2f36;
   border-radius: 16px;
+  padding: 30px;
 `;
 
 export const SSectionNewPost = styled.section`
@@ -17,11 +18,6 @@ export const SSectionNewPost = styled.section`
   border: 2px solid #2e2f36;
   border-radius: 16px;
   margin: 20px;
-`;
-
-export const SSectionPost = styled.section`
-  width: 80%;
-  min-width: 30%;
 `;
 
 export const SNewPostLawer1 = styled.div`
@@ -48,6 +44,11 @@ export const SInputMessage = styled.input`
   ::placeholder {
     font-size: 16px;
     font-family: ${theme.fonts.family.default};
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
   }
 
   flex-direction: row;
@@ -100,35 +101,171 @@ export const SAreaTools = styled.div`
   margin-left: 2%;
 `;
 
-export const SSectionHeaderPost = styled.section``;
-export const SImgHeaderPostPhoto = styled.img``;
-export const SSectionHeaderPostNameDate = styled.section``;
+export const SSectionPost = styled.section`
+  width: 80%;
+  min-width: 30%;
+`;
+// LIST POSTS
+export const SSectionHeaderPost = styled.section`
+  display: flex;
+  font-size: 12px;
+`;
+
+export const SImgHeaderPostPhoto = styled.img`
+  border-radius: 100%;
+  height: 2.2vw;
+`;
+
+export const SSectionHeaderPostNameDate = styled.section`
+  margin: 0 0 1.2vw 1.2vw;
+`;
 export const STextHeaderPostName = styled.text``;
-export const SSectionHeaderPostDateLocal = styled.section``;
-export const STextHeaderPostDate = styled.text``;
+export const SSectionHeaderPostDateLocal = styled.section`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 300px;
+`;
+
+export const SImgHeaderPostDateIcon = styled.img`
+  margin-right: 5px;
+`;
+export const STextHeaderPostDate = styled.text`
+  color: rgba(117, 118, 125, 1);
+  margin-right: 5px;
+`;
 export const STextHeaderPostLocal = styled.text``;
 
-export const STextPostText = styled.text``;
-export const SImgPost = styled.img``;
+export const STextPostText = styled.text`
+  font-size: 12px;
+`;
+
+export const SImgPost = styled.img`
+  margin-top: 15px;
+  width: 100%;
+`;
 
 export const SSectionFooterPost = styled.section``;
-export const SSectionFooterPostIcons = styled.section``;
-export const SSectionFooterIconText = styled.section``;
-export const SImgFooterPostIcon = styled.img``;
+export const SSectionFooterPostIcons = styled.section`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 15px;
+`;
+export const SSectionFooterIconText = styled.section`
+  margin-top: 15px;
+  display: flex;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const SImgFooterPostIcon = styled.img`
+  filter: brightness(0) invert(1);
+  margin-right: 10px;
+`;
 export const STextFooterPostTexticon = styled.text``;
-export const SSectionFooterComment = styled.section``;
-export const SImgFooterCommentPhoto = styled.img``;
+export const SSectionFooterComment = styled.section`
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
 
-export const SSectionFooterCommentInput = styled.section``;
-export const SInputFooterComment = styled.input``;
-export const SSectionFooterIcons = styled.section``;
-export const SImgFooterIcon = styled.img``;
+export const SImgFooterCommentPhoto = styled.img`
+  border-radius: 100%;
+  height: 2.2vw;
+  margin-right: 10px;
+`;
 
-export const SSectionComments = styled.section``;
-export const STextCommentsTitle = styled.text``;
-export const SImgComments = styled.img``;
-export const STextCommentsName = styled.text``;
-export const STextCommentsComment = styled.text``;
+export const SSectionFooterCommentInput = styled.section`
+  ::placeholder {
+    font-size: 16px;
+    font-family: ${theme.fonts.family.default};
+  }
 
-export const SSectionButtonComments = styled.section``;
-export const SButtonComments = styled.button``;
+  align-items: center;
+  padding: 8px 24px;
+  width: 100%;
+  height: 25px;
+
+  background: ${theme.colors.inputMessage};
+  border: 1px solid ${theme.colors.inputMessage};
+  border-radius: 46px;
+
+  display: flex;
+`;
+
+export const SInputFooterComment = styled.input`
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  border: none;
+  background: ${theme.colors.inputMessage};
+  width: 70%;
+  font-size: 16px;
+  color: rgba(117, 118, 125, 1);
+`;
+export const SSectionFooterIcons = styled.section`
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const SImgFooterIcon = styled.img`
+  height: 1.5vw;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const SSectionComments = styled.section`
+  margin-top: 15px;
+`;
+export const STextCommentsTitle = styled.text`
+  display: block;
+  margin-bottom: 15px;
+`;
+export const SSectionComment = styled.section`
+  display: flex;
+  justify-content: flex-start;
+`;
+
+export const SImgComments = styled.img`
+  border-radius: 100%;
+  height: 2.2vw;
+  /* display: flex; */
+`;
+export const STextCommentsName = styled.text`
+  font-size: 12px;
+  margin-left: 10px;
+  min-width: 100px;
+`;
+export const STextCommentsComment = styled.text`
+  color: #a3a3a3;
+  font-size: 12px;
+`;
+
+export const SSectionButtonComments = styled.section`
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+export const SButtonComments = styled.button`
+  background: none;
+  border: none;
+
+  color: #2d86fc;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
