@@ -64,6 +64,14 @@ export const SHeaderAreaUser = styled.div`
   align-items: center;
 `;
 
+export const SImgHeader = styled.img`
+  border-radius: 100%;
+  height: 2.5vw;
+  width: 2.5vw;
+  margin: 1.5vw 2vw 1.2vw 1.2vw;
+  
+`;
+
 export const SIconHome = styled.img`
   height: 1.5vw;
 `;

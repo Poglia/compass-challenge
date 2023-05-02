@@ -37,6 +37,7 @@ import {
   SFriend,
   SFriendPhoto,
   SFriendName,
+  SImgHeader
 } from "../styles/Home.style";
 
 import {
@@ -208,7 +209,8 @@ function Home() {
             <SHeaderH3>Home</SHeaderH3>
           </SHeaderAreaHome>
           <SHeaderAreaUser>
-            <h2>Name Foto</h2>
+           <span> Pedro F Poglia</span>
+           <SImgHeader src={Macaco}/> 
           </SHeaderAreaUser>
         </SSectionHeader>
         <SSectionCenter>
