@@ -16,3 +16,4 @@ const getPostsDB = async () => {
     }
 };
 module.exports = { getPostsDB };
+//# sourceMappingURL=postUseCases.js.map

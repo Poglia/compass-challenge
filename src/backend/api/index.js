@@ -13,3 +13,4 @@ app.use(routes);
 app.listen(process.env.PORT || door, () => {
     console.log('Servidor da API rodando na porta ' + door);
 });
+//# sourceMappingURL=index.js.map

@@ -81,15 +81,15 @@ import {
   SButtonComments,
 } from "../styles/HomePosts.style";
 
-const { getUsersDB } = require('../../backend/api/useCases/UserUseCases');
+const { getUsers } = require('../backend/api/controllers/usersController');
 
 function Home() {
 
   const [friends, setFriends] = useState({});
 
   function getFriends(){
-
-
+    setFriends(getUsers);
+    console.log(friends);
   }
   return (
     <SHome>

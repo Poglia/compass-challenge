@@ -15,3 +15,4 @@ const getUsers = async (request, response) => {
     }
 };
 exports.getUsers = getUsers;
+//# sourceMappingURL=usersController.js.map

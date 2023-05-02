@@ -8,3 +8,4 @@ routes.route('/posts')
 routes.route('/users')
     .get(getUsers);
 module.exports = routes;
+//# sourceMappingURL=routes.js.map

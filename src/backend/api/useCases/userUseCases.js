@@ -16,3 +16,4 @@ const getUsersDB = async () => {
     }
 };
 module.exports = { getUsersDB };
+//# sourceMappingURL=userUseCases.js.map

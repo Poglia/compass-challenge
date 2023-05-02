@@ -15,3 +15,4 @@ const getPosts = async (request, response) => {
     }
 };
 exports.getPosts = getPosts;
+//# sourceMappingURL=postsController.js.map
