@@ -5,7 +5,7 @@ import { theme } from "./defaultVariables";
 
 export const SSectionPosts = styled.section`
   background-color: ${theme.colors.backgroundColorSecundary};
-  min-height: 60vh;
+  /* min-height: 60vh; */
   margin: 20px;
   border: 2px solid #2e2f36;
   border-radius: 16px;
