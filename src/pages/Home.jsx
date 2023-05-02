@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
-
+import { useHistory } from "react-router-dom";
 
 import SvgLogo from "../assets/icons/logo.svg";
 import Macaco from "../assets/icons/macaco.jpg";
@@ -84,9 +83,10 @@ import {
 } from "../styles/HomePosts.style";
 
 function Home() {
-  
   const [friends, setFriends] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [buttonClicked, setbuttonClicked] = useState(false);
+  const [newPostMessage, setNewPostMessage] = useState("");
 
   function getProfilePhotoById(id) {
     const friend = friends.find((friend) => friend.user_id === id);
@@ -113,6 +113,65 @@ function Home() {
     } else {
       return diffMinutes + " minutos atrás";
     }
+  }
+
+  const handleClick = () => {
+    setbuttonClicked(true);
+  };
+
+  function CreateStaticPost() {
+    return (
+      <SSectionPosts>
+        <SSectionHeaderPost>
+          <SImgHeaderPostPhoto src={Macaco}></SImgHeaderPostPhoto>
+          <SSectionHeaderPostNameDate>
+            <STextHeaderPostName>Pedro F. Poglia</STextHeaderPostName>
+            <SSectionHeaderPostDateLocal>
+              <SImgHeaderPostDateIcon src={SvgClock}></SImgHeaderPostDateIcon>
+              <STextHeaderPostDate>a 1seg atrás</STextHeaderPostDate>
+              <STextHeaderPostLocal>Paisagens Exuberantes</STextHeaderPostLocal>
+            </SSectionHeaderPostDateLocal>
+          </SSectionHeaderPostNameDate>
+        </SSectionHeaderPost>
+        <STextPostText>{newPostMessage}</STextPostText>
+        {/* <SImgPost src={post.url_imagem}></SImgPost> */}
+        <SSectionFooterPost>
+          <SSectionFooterPostIcons>
+            <SSectionFooterIconText>
+              <SImgFooterPostIcon src={SvgLike}></SImgFooterPostIcon>
+              <STextFooterPostTexticon>Curtiu</STextFooterPostTexticon>
+            </SSectionFooterIconText>
+            <SSectionFooterIconText>
+              <SImgFooterPostIcon src={SvgComment}></SImgFooterPostIcon>
+              <STextFooterPostTexticon>Comentários</STextFooterPostTexticon>
+            </SSectionFooterIconText>
+            <SSectionFooterIconText>
+              <SImgFooterPostIcon src={SvgShare}></SImgFooterPostIcon>
+              <STextFooterPostTexticon>Compartilhar</STextFooterPostTexticon>
+            </SSectionFooterIconText>
+          </SSectionFooterPostIcons>
+          <SSectionFooterComment>
+            <SImgFooterCommentPhoto src={Macaco}></SImgFooterCommentPhoto>
+            <SSectionFooterCommentInput>
+              <SInputFooterComment placeholder="No que você está pesando?"></SInputFooterComment>
+              <SSectionFooterIcons>
+                <SImgFooterIcon src={SvgCamera}></SImgFooterIcon>
+                <SImgFooterIcon src={SvgPhoto}></SImgFooterIcon>
+                <SImgFooterIcon src={SvgFile}></SImgFooterIcon>
+                <SImgFooterIcon src={SvgLocal}></SImgFooterIcon>
+                <SImgFooterIcon src={SvgEmoji}></SImgFooterIcon>
+              </SSectionFooterIcons>
+            </SSectionFooterCommentInput>
+          </SSectionFooterComment>
+        </SSectionFooterPost>
+        <SSectionComments>
+          <STextCommentsTitle>Todos os comentários</STextCommentsTitle>
+        </SSectionComments>
+        <SSectionButtonComments>
+          <SButtonComments>Ver todos os Comentários</SButtonComments>
+        </SSectionButtonComments>
+      </SSectionPosts>
+    );
   }
 
   useEffect(() => {
@@ -157,7 +216,10 @@ function Home() {
             <SSectionNewPost>
               <SNewPostLawer1>
                 <SIconUser src={Macaco}></SIconUser>
-                <SInputMessage placeholder="No que você está pesando?"></SInputMessage>
+                <SInputMessage
+                  placeholder="No que você está pesando?"
+                  onChange={(event) => setNewPostMessage(event.target.value)}
+                ></SInputMessage>
               </SNewPostLawer1>
               <SNewPostLawer2>
                 <SAreaTools>
@@ -168,10 +230,11 @@ function Home() {
                   <SVgTools src={SvgEmoji}></SVgTools>
                 </SAreaTools>
                 <SAreaButton>
-                  <SButtonPost>Postar</SButtonPost>
+                  <SButtonPost onClick={handleClick}>Postar</SButtonPost>
                 </SAreaButton>
               </SNewPostLawer2>
             </SSectionNewPost>
+            {buttonClicked && <CreateStaticPost />}
             {posts.map((post) => (
               <SSectionPosts>
                 <SSectionHeaderPost>
@@ -232,102 +295,26 @@ function Home() {
                 </SSectionFooterPost>
                 <SSectionComments>
                   <STextCommentsTitle>Todos os comentários</STextCommentsTitle>
-                  {post.comments.map((comment) => (
-                     comment.length !== 0 && (
-                    <SSectionComment>
-                      <SImgComments src={getProfilePhotoById(comment.user_id)}></SImgComments>
-                      <STextCommentsName>{comment.user}</STextCommentsName>
-                      <STextCommentsComment>
-                        {comment.comment}
-                      </STextCommentsComment>
-                    </SSectionComment>
-                     )
-                  ))}
+                  {post.comments.map(
+                    (comment) =>
+                      comment.length !== 0 && (
+                        <SSectionComment>
+                          <SImgComments
+                            src={getProfilePhotoById(comment.user_id)}
+                          ></SImgComments>
+                          <STextCommentsName>{comment.user}</STextCommentsName>
+                          <STextCommentsComment>
+                            {comment.comment}
+                          </STextCommentsComment>
+                        </SSectionComment>
+                      )
+                  )}
                 </SSectionComments>
                 <SSectionButtonComments>
                   <SButtonComments>Ver todos os Comentários</SButtonComments>
                 </SSectionButtonComments>
               </SSectionPosts>
             ))}
-
-            <SSectionPosts>
-              <SSectionHeaderPost>
-                <SImgHeaderPostPhoto src={Macaco}></SImgHeaderPostPhoto>
-                <SSectionHeaderPostNameDate>
-                  <STextHeaderPostName>Nome da pessoa</STextHeaderPostName>
-                  <SSectionHeaderPostDateLocal>
-                    <SImgHeaderPostDateIcon
-                      src={SvgClock}
-                    ></SImgHeaderPostDateIcon>
-                    <STextHeaderPostDate>
-                      12 minutos atras em
-                    </STextHeaderPostDate>
-                    <STextHeaderPostLocal>
-                      Paisagens Exuberantes
-                    </STextHeaderPostLocal>
-                  </SSectionHeaderPostDateLocal>
-                </SSectionHeaderPostNameDate>
-              </SSectionHeaderPost>
-              <STextPostText>
-                Texto do post ahahhah ahahhah ahaha Texto do post ahahhah
-                ahahhah ahaha Texto do post ahahhah ahahhah ahaha Texto do post
-                ahahhah ahahhah ahaha Texto do post ahahhah ahahhah ahaha Texto
-                do post ahahhah ahahhah ahaha Texto do post ahahhah ahahhah
-                ahahaTexto do post ahahhah ahahhah ahaha Texto do post ahahhah
-                ahahhah ahahaTexto do post ahahhah ahahhah
-              </STextPostText>
-              <SImgPost src={Exemplo}></SImgPost>
-              <SSectionFooterPost>
-                <SSectionFooterPostIcons>
-                  <SSectionFooterIconText>
-                    <SImgFooterPostIcon src={SvgLike}></SImgFooterPostIcon>
-                    <STextFooterPostTexticon>Curtiu</STextFooterPostTexticon>
-                  </SSectionFooterIconText>
-                  <SSectionFooterIconText>
-                    <SImgFooterPostIcon src={SvgComment}></SImgFooterPostIcon>
-                    <STextFooterPostTexticon>
-                      Comentários
-                    </STextFooterPostTexticon>
-                  </SSectionFooterIconText>
-                  <SSectionFooterIconText>
-                    <SImgFooterPostIcon src={SvgShare}></SImgFooterPostIcon>
-                    <STextFooterPostTexticon>
-                      Compartilhar
-                    </STextFooterPostTexticon>
-                  </SSectionFooterIconText>
-                </SSectionFooterPostIcons>
-                <SSectionFooterComment>
-                  <SImgFooterCommentPhoto src={Macaco}></SImgFooterCommentPhoto>
-                  <SSectionFooterCommentInput>
-                    <SInputFooterComment placeholder="No que você está pesando?"></SInputFooterComment>
-                    <SSectionFooterIcons>
-                      <SImgFooterIcon src={SvgCamera}></SImgFooterIcon>
-                      <SImgFooterIcon src={SvgPhoto}></SImgFooterIcon>
-                      <SImgFooterIcon src={SvgFile}></SImgFooterIcon>
-                      <SImgFooterIcon src={SvgLocal}></SImgFooterIcon>
-                      <SImgFooterIcon src={SvgEmoji}></SImgFooterIcon>
-                    </SSectionFooterIcons>
-                  </SSectionFooterCommentInput>
-                </SSectionFooterComment>
-              </SSectionFooterPost>
-              <SSectionComments>
-                <STextCommentsTitle>Todos os comentários</STextCommentsTitle>
-                <SSectionComment>
-                  <SImgComments src={Macaco}></SImgComments>
-                  <STextCommentsName>Junior Saraiva: </STextCommentsName>
-                  <STextCommentsComment>
-                    Que bela paisagem! As cores são simplesmente deslumbrantes..
-                    Que bela paisagem! As cores são simplesmente deslumbrantes..
-                    Que bela paisagem! As cores são simplesmente deslumbrantes..
-                    Que bela paisagem! As cores são simplesmente deslumbrantes..
-                    Que bela paisagem! As cores são simplesmente deslumbrantes..
-                  </STextCommentsComment>
-                </SSectionComment>
-              </SSectionComments>
-              <SSectionButtonComments>
-                <SButtonComments>Ver todos os Comentários</SButtonComments>
-              </SSectionButtonComments>
-            </SSectionPosts>
           </SSectionPost>
           <SSectionRight>
             <SSectionSquare>
