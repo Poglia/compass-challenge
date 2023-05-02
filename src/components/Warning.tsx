@@ -10,7 +10,7 @@ import { SDivError } from "../styles/Form.style";
 import AppContext from "../AppContext";
 
 function Warning() {
-  const [heightDiv, setHeightDiv] = useState(0);
+  const [heightDiv, setHeightDiv] = useState<number | string>(0);
   const { errorMessage } = useContext(AppContext);
 
   const sizeObject = Object.keys(errorMessage).length;
@@ -22,7 +22,7 @@ function Warning() {
 
   return (
     <SDivError style={{ height: heightDiv }}>
-      {errorMessage.map((message) => (
+      {errorMessage.map((message: string) => (
         <SP2 style={{ color: theme.colors.textError }}>{message}</SP2>
       ))}
     </SDivError>
