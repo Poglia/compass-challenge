@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 
 import SvgLogo from "../assets/icons/logo.svg";
 import Macaco from "../assets/icons/macaco.jpg";
@@ -81,16 +81,32 @@ import {
   SButtonComments,
 } from "../styles/HomePosts.style";
 
-const { getUsers } = require('../backend/api/controllers/usersController');
-
 function Home() {
+  const [friends, setFriends] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  const [friends, setFriends] = useState({});
+  useEffect(() => {
+    fetch("http://localhost:3002/users")
+      .then((response) => response.json())
+      .then((data) => {
+        setFriends(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-  function getFriends(){
-    setFriends(getUsers);
-    console.log(friends);
-  }
+  useEffect(() => {
+    fetch("http://localhost:3002/posts")
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <SHome>
       <SSectionLeft>
@@ -187,16 +203,16 @@ function Home() {
                 </SSectionFooterComment>
               </SSectionFooterPost>
               <SSectionComments>
-                  <STextCommentsTitle>Todos os comentários</STextCommentsTitle>
+                <STextCommentsTitle>Todos os comentários</STextCommentsTitle>
                 <SSectionComment>
                   <SImgComments src={Macaco}></SImgComments>
                   <STextCommentsName>Junior Saraiva: </STextCommentsName>
                   <STextCommentsComment>
-                    Que bela paisagem! As cores são simplesmente deslumbrantes..  Que bela paisagem! As cores são simplesmente deslumbrantes..
                     Que bela paisagem! As cores são simplesmente deslumbrantes..
                     Que bela paisagem! As cores são simplesmente deslumbrantes..
                     Que bela paisagem! As cores são simplesmente deslumbrantes..
-
+                    Que bela paisagem! As cores são simplesmente deslumbrantes..
+                    Que bela paisagem! As cores são simplesmente deslumbrantes..
                   </STextCommentsComment>
                 </SSectionComment>
               </SSectionComments>
@@ -209,22 +225,12 @@ function Home() {
             <SSectionSquare>
               <SAreaRightH3>Meus Amigos</SAreaRightH3>
               <SAreaListFriend>
-                <SFriend>
-                  <SFriendPhoto src={Macaco}></SFriendPhoto>
-                  <SFriendName>Pedro F. Poglia</SFriendName>
-                </SFriend>
-                <SFriend>
-                  <SFriendPhoto src={Macaco}></SFriendPhoto>
-                  <SFriendName>Pedro F. Poglia</SFriendName>
-                </SFriend>
-                <SFriend>
-                  <SFriendPhoto src={Macaco}></SFriendPhoto>
-                  <SFriendName>Pedro F. Poglia</SFriendName>
-                </SFriend>
-                <SFriend>
-                  <SFriendPhoto src={Macaco}></SFriendPhoto>
-                  <SFriendName>Pedro F. Poglia</SFriendName>
-                </SFriend>
+                {friends.map((friend) => (
+                  <SFriend key={friend.name}>
+                    <SFriendPhoto src={Macaco}></SFriendPhoto>
+                    <SFriendName>{friend.name}</SFriendName>
+                  </SFriend>
+                ))}
               </SAreaListFriend>
             </SSectionSquare>
             <SSectionSquare></SSectionSquare>
