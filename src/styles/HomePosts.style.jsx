@@ -113,7 +113,8 @@ export const SSectionHeaderPost = styled.section`
 
 export const SImgHeaderPostPhoto = styled.img`
   border-radius: 100%;
-  height: 2.2vw;
+  height: 2.5vw;
+  width: 2.5vw;
 `;
 
 export const SSectionHeaderPostNameDate = styled.section`
@@ -143,6 +144,7 @@ export const STextPostText = styled.text`
 export const SImgPost = styled.img`
   margin-top: 15px;
   width: 100%;
+  max-height: 400px;
 `;
 
 export const SSectionFooterPost = styled.section``;

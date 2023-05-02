@@ -126,9 +126,11 @@ export const SFriend = styled.div`
 `;
 
 export const SFriendPhoto = styled.img`
-  border-radius: 100%;
-  height: 2vw;
-  padding-left: 10px;
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 10px;
 `;
 export const SFriendName = styled.h3`
   padding-left: 10px;

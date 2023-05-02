@@ -85,6 +85,12 @@ function Home() {
   const [friends, setFriends] = useState([]);
   const [posts, setPosts] = useState([]);
 
+  function getProfilePhotoById(id)
+  {
+    const friend = friends.find((friend) => friend.user_id === id);
+  return friend ? friend.profile_photo : Macaco;
+  }
+
   function formatDate(date) {
     const moment = require("moment");
 
@@ -161,7 +167,7 @@ function Home() {
             {posts.map((post) => (
               <SSectionPosts>
                 <SSectionHeaderPost>
-                  <SImgHeaderPostPhoto src={Macaco}></SImgHeaderPostPhoto>
+                  <SImgHeaderPostPhoto src={getProfilePhotoById(post.user_id)}></SImgHeaderPostPhoto>
                   <SSectionHeaderPostNameDate>
                     <STextHeaderPostName>{post.user}</STextHeaderPostName>
                     <SSectionHeaderPostDateLocal>
@@ -178,14 +184,9 @@ function Home() {
                   </SSectionHeaderPostNameDate>
                 </SSectionHeaderPost>
                 <STextPostText>
-                  Texto do post ahahhah ahahhah ahaha Texto do post ahahhah
-                  ahahhah ahaha Texto do post ahahhah ahahhah ahaha Texto do
-                  post ahahhah ahahhah ahaha Texto do post ahahhah ahahhah ahaha
-                  Texto do post ahahhah ahahhah ahaha Texto do post ahahhah
-                  ahahhah ahahaTexto do post ahahhah ahahhah ahaha Texto do post
-                  ahahhah ahahhah ahahaTexto do post ahahhah ahahhah
+                  {post.description}
                 </STextPostText>
-                <SImgPost src={Exemplo}></SImgPost>
+                <SImgPost src={post.url_imagem}></SImgPost>
                 <SSectionFooterPost>
                   <SSectionFooterPostIcons>
                     <SSectionFooterIconText>
@@ -327,7 +328,7 @@ function Home() {
               <SAreaListFriend>
                 {friends.map((friend) => (
                   <SFriend key={friend.name}>
-                    <SFriendPhoto src={Macaco}></SFriendPhoto>
+                    <SFriendPhoto src={friend.profile_photo}></SFriendPhoto>
                     <SFriendName>{friend.name}</SFriendName>
                   </SFriend>
                 ))}
