@@ -26,8 +26,10 @@ export const SNewPostLawer1 = styled.div`
 
 export const SIconUser = styled.img`
   border-radius: 100%;
-  height: 2.2vw;
+  height: 2.5vw;
+  width: 2.5vw;
   margin: 1.5vw 0 1.2vw 1.2vw;
+  
 `;
 
 export const SVgTools = styled.img`
@@ -177,7 +179,8 @@ export const SSectionFooterComment = styled.section`
 
 export const SImgFooterCommentPhoto = styled.img`
   border-radius: 100%;
-  height: 2.2vw;
+  height: 2.5vw;
+  width: 2.5vw;
   margin-right: 10px;
 `;
 
@@ -233,11 +236,13 @@ export const STextCommentsTitle = styled.text`
 export const SSectionComment = styled.section`
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 15px;
 `;
 
 export const SImgComments = styled.img`
   border-radius: 100%;
-  height: 2.2vw;
+  height: 2.5vw;
+  width: 2.5vw;
   /* display: flex; */
 `;
 export const STextCommentsName = styled.text`
@@ -248,6 +253,7 @@ export const STextCommentsName = styled.text`
 export const STextCommentsComment = styled.text`
   color: #a3a3a3;
   font-size: 12px;
+  margin-bottom: 10px;
 `;
 
 export const SSectionButtonComments = styled.section`

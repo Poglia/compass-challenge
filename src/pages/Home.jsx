@@ -85,11 +85,16 @@ function Home() {
   const [friends, setFriends] = useState([]);
   const [posts, setPosts] = useState([]);
 
-  function getProfilePhotoById(id)
-  {
+  function getProfilePhotoById(id) {
     const friend = friends.find((friend) => friend.user_id === id);
-  return friend ? friend.profile_photo : Macaco;
+    return friend ? friend.profile_photo : Macaco;
   }
+
+  // posts.map((post) => {
+  //   post.comments.map((comment) => {
+  //     console.log(comment.comment)
+  //   })
+  // })
 
   function formatDate(date) {
     const moment = require("moment");
@@ -167,7 +172,9 @@ function Home() {
             {posts.map((post) => (
               <SSectionPosts>
                 <SSectionHeaderPost>
-                  <SImgHeaderPostPhoto src={getProfilePhotoById(post.user_id)}></SImgHeaderPostPhoto>
+                  <SImgHeaderPostPhoto
+                    src={getProfilePhotoById(post.user_id)}
+                  ></SImgHeaderPostPhoto>
                   <SSectionHeaderPostNameDate>
                     <STextHeaderPostName>{post.user}</STextHeaderPostName>
                     <SSectionHeaderPostDateLocal>
@@ -183,9 +190,7 @@ function Home() {
                     </SSectionHeaderPostDateLocal>
                   </SSectionHeaderPostNameDate>
                 </SSectionHeaderPost>
-                <STextPostText>
-                  {post.description}
-                </STextPostText>
+                <STextPostText>{post.description}</STextPostText>
                 <SImgPost src={post.url_imagem}></SImgPost>
                 <SSectionFooterPost>
                   <SSectionFooterPostIcons>
@@ -224,18 +229,17 @@ function Home() {
                 </SSectionFooterPost>
                 <SSectionComments>
                   <STextCommentsTitle>Todos os comentários</STextCommentsTitle>
-                  <SSectionComment>
-                    <SImgComments src={Macaco}></SImgComments>
-                    <STextCommentsName>Junior Saraiva: </STextCommentsName>
-                    <STextCommentsComment>
-                      Que bela paisagem! As cores são simplesmente
-                      deslumbrantes.. Que bela paisagem! As cores são
-                      simplesmente deslumbrantes.. Que bela paisagem! As cores
-                      são simplesmente deslumbrantes.. Que bela paisagem! As
-                      cores são simplesmente deslumbrantes.. Que bela paisagem!
-                      As cores são simplesmente deslumbrantes..
-                    </STextCommentsComment>
-                  </SSectionComment>
+                  {post.comments.map((comment) => (
+                     comment.length !== 0 && (
+                    <SSectionComment>
+                      <SImgComments src={getProfilePhotoById(comment.user_id)}></SImgComments>
+                      <STextCommentsName>{comment.user}</STextCommentsName>
+                      <STextCommentsComment>
+                        {comment.comment}
+                      </STextCommentsComment>
+                    </SSectionComment>
+                     )
+                  ))}
                 </SSectionComments>
                 <SSectionButtonComments>
                   <SButtonComments>Ver todos os Comentários</SButtonComments>

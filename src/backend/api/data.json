@@ -255,7 +255,8 @@
       "user": "diegosuarez",
       "post_date": "2023-04-18T14:45:00",
       "description": "Mais um dia de trabalho concluído!  💻",
-      "likes": 6
+      "likes": 6,
+      "comments": []
     },
     {
       "user_id": 5,
